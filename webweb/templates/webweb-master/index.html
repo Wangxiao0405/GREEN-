@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_794813_tjvkyx3ko68.css">
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+<div class="fixed"></div>
+<div class="logo"></div>
+<div class="btn">
+    <div class="box"></div>
+</div>
+<!--侧边导航栏开始-->
+<div class="aside">
+    <div class="left">
+        <div class="imgbox"></div>
+        <div class="text">
+            <i class="iconfont icon-iconfontshouji"></i>
+            扫一扫微信二维码
+        </div>
+    </div>
+    <div class="btn1">
+        <div class="box1"></div>
+    </div>
+    <ul class="right">
+        <li><a href="/">首页</a></li>
+        <li><a href="/aboutus">关于我们</a></li>
+        <li><a href="/business">核心业务</a></li>
+        <li><a href="/product">农场产品</a></li>
+        <li><a href="/news">新闻资讯</a></li>
+        <li><a href="/contact">联系我们</a></li>
+    </ul>
+</div>
+<!--侧边导航栏结束-->
+<main>
+    <header></header>
+    <div class="banner">
+        <span> Farm Input Purchasing, Made Easy</span>
+        <a href="/aboutus">
+            <div class="more">
+                阅读更多&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→
+            </div>
+        </a>
+    </div>
+    <div class="container banner_container">
+        <ul class="row row1">
+            <li>
+                <div class="imgBox"></div>
+                <h1>12000+</h1>
+                <h3>成功案例</h3>
+            </li>
+            <li>
+                <div class="imgBox imgBox1"></div>
+                <h1>010+</h1>
+                <h3>解决方案</h3>
+            </li>
+            <li>
+                <div class="imgBox imgBox2"></div>
+                <h1>200+</h1>
+                <h3>合作伙伴</h3>
+            </li>
+            <li>
+                <div class="imgBox imgBox3"></div>
+                <h1>12000+</h1>
+                <h3>成功案例</h3>
+            </li>
+            <li>
+                <div class="imgBox imgBox4"></div>
+                <h1>050+</h1>
+                <h3>技术专利</h3>
+            </li>
+            <li>
+                <div class="imgBox imgBox5"></div>
+                <h1>12000+</h1>
+                <h3>成功案例</h3>
+            </li>
+        </ul>
+    </div>
+    <div class="container tec">
+        <ul class="row tec_row">
+            <li ></li>
+            <li>
+                我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图、自由拖拽，不需要专业编写代码，您可以随心所欲创建区块、添加组件…
+            </li>
+            <li>
+                <div class="text">
+                    <div class="left">农业技术专利</div>
+                    <div class="right">85%</div>
+                </div>
+                <div class="box">
+                    <div class="top">75%</div>
+                </div>
+                <div class="text">
+                    <div class="left">农业技术专利</div>
+                    <div class="right">85%</div>
+                </div>
+                <div class="box">
+                    <div class="top">75%</div>
+                </div>
+                <div class="text">
+                    <div class="left">农业技术专利</div>
+                    <div class="right">85%</div>
+                </div>
+                <div class="box">
+                    <div class="top">75%</div>
+                </div>
+                <div class="more more1">
+                    阅读更多&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="product">产品系列</div>
+    <div class="line"></div>
+    <div class="arrows">
+        <div class="left"><</div>
+        <div class="right">></div>
+    </div>
+    <div class="container pro_container">
+        <ul class="con">
+            {% for item in data %}
+            <a href="/product1{{item[0]}}">
+                <li class="box" style="background:url({{item[2]}}) no-repeat center;background-size:cover">
+                    <div class="gray">
+                    <div class="border">
+                        <span>{{item[1]}}</span>
+                        <span class="num">></span>
+                    </div>
+                     </div>
+                 </li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/product">
+        <div class="more more1 more2">
+            阅读更多&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→
+        </div>
+    </a>
+    <div class="display">
+        <div class="left"></div>
+        <div class="right">
+            <div class="head"></div>
+            <div class="text">我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+                还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。起飞页提供了海量精美网站模板和成品网站，起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图、自由拖拽，
+                不需要专业编写代码，也没有其他建站工具的层叠式烦恼，您可以随心所欲创建区块、添加组件…</div>
+        </div>
+    </div>
+    <div class="product">新闻中心</div>
+    <div class="English">NEWS</div>
+    <div class="line line1"></div>
+    <ul class="news">
+        {% for item in data1 %}
+        <li class="box">
+            <a href="/news1">
+                <div class="imgbox">
+                    <img src="{{item[2]}}" alt="" width="100%" height="100%">
+                </div>
+            </a>
+            <a href="/news1{{item[0]}}"><div class="textbox1">{{item[1]}}</div></a>
+            <div class="wire"></div>
+            <div class="textbox2" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow: hidden;">{{item[4]}}...</div>
+            <a href="/"><div class="bottom">→</div></a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/news">
+        <div class="more more1 more2">
+            阅读更多&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→
+        </div>
+    </a>
+</main>
+<div class="fixbox">
+    <div class="darkbox">
+        <div class="product">关于我们</div>
+        <div class="English">ABOUT</div>
+        <div class="line line1"></div>
+        <ul class="middle">
+            <a href="/aboutus">
+                <li>
+                    <div class="time">
+                        <div class="left">06-16</div>
+                        <div class="right">2018</div>
+                    </div>
+                    <div class="text">
+                        <div class="text1">新疆畜牧业加强推广“四良一规范”</div>
+                        <div class="text2">由全国音乐教育服务联盟合作平台（中国乐器协会、中央音乐学院、中国教育学会音乐教育...</div>
+                        <div class="arrow"> ></div>
+                    </div>
+                 </li>
+            </a>
+            <a href="/aboutus">
+                <li>
+                    <div class="time">
+                        <div class="left">06-16</div>
+                        <div class="right">2018</div>
+                    </div>
+                    <div class="text">
+                        <div class="text1">传统农牧业70年的现代重构</div>
+                        <div class="text2">大家都知道《野蜂飞舞》技术高，速度虽然是考验一个人技术高低的标准，但却不是一步就但却不是一步就</div>
+                        <div class="arrow"> ></div>
+                    </div>
+                </li>
+            </a>
+            <a href="/aboutus">
+                <li>
+                    <div class="time">
+                        <div class="left">06-16</div>
+                        <div class="right">2018</div>
+                    </div>
+                    <div class="text">
+                        <div class="text1">供给侧改革催生“畜牧城”新业态</div>
+                        <div class="text2">日前，"一带一路"音乐教育联盟成立大会——暨音乐学术研讨与展演在中央音乐学院歌剧中央音乐学院歌剧</div>
+                        <div class="arrow"> ></div>
+                    </div>
+                </li>
+            </a>
+            <a href="/aboutus">
+                <li>
+                    <div class="time">
+                        <div class="left">06-16</div>
+                        <div class="right">2018</div>
+                    </div>
+                    <div class="text">
+                        <div class="text1">内蒙古东乌珠穆沁旗大力培育畜牧业科技...</div>
+                        <div class="text2">音乐教学是艺术素质教育的一个重要方面，从古至今，人们为了生活的需要，创造出了形式中央音乐学院歌剧</div>
+                        <div class="arrow"> ></div>
+                    </div>
+                </li>
+            </a>
+        </ul>
+    </div>
+</div>
+<div class="sponsor">
+    <ul class="container">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="Bottom">
+    <div class="darkbox">
+        <div class="box">
+            <input type="text" placeholder="请填写您的联系电话">
+            <div class="send">发送</div>
+        </div>
+        <ul class="box2">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<div class="work">版权所有 ©  农产品企业模板</div>
+<script src="/static/js/index.js"></script>
+</body>
+</html>

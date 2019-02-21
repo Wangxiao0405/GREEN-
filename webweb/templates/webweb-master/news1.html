@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news1</title>
+    <link rel="stylesheet" href="/static/css/news1.css">
+</head>
+<body>
+<div class="logo"></div>
+<div class="btn">
+    <div class="box"></div>
+</div>
+<!--侧边导航栏开始-->
+<div class="aside">
+    <div class="left">
+        <div class="imgbox"></div>
+        <div class="text">
+            <i class="iconfont icon-iconfontshouji"></i>
+            扫一扫微信二维码
+        </div>
+    </div>
+    <div class="btn1">
+        <div class="box1"></div>
+    </div>
+    <ul class="right">
+        <li><a href="/">首页</a></li>
+        <li><a href="/aboutus">关于我们</a></li>
+        <li><a href="/business">核心业务</a></li>
+        <li><a href="/product">农场产品</a></li>
+        <li><a href="/news">新闻资讯</a></li>
+        <li><a href="/contact">联系我们</a></li>
+    </ul>
+</div>
+<!--侧边导航栏结束-->
+<header></header>
+<main>
+    <div class="left">
+        {% for item in data %}
+        <div class="title">{{item[1]}}</div>
+        <div class="time">   发布日期：{{item[5]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分享到：</div>
+        <div class="word" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;overflow: hidden; ">
+            {{item[4]}}
+        </div>
+        <div class="before"><a href="/news1{{item[0]}}">上一篇:{{item[6]}}</a></div>
+        <div class="after"><a href="/news1{{item[0]}}"> 下一篇:{{item[7]}}</a></div>
+        {% endfor %}
+    </div>
+    <ul class="right">
+        <li>阅读更多文章</li>
+        {% for item in data1 %}
+        <li>
+            <a href="/news1{{item[0]}}">{{item[1]}}</a>
+            <span>发布日期：{{item[5]}}</span>
+        </li>
+        {% endfor %}
+
+    </ul>
+</main>
+<div class="work">版权所有 ©  农产品企业模板</div>
+<script src="/static/js/index.js"></script>
+</body>
+</html>

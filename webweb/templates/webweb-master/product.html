@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+    <link rel="stylesheet" href="/static/css/product.css">
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="btn">
+        <div class="box"></div>
+    </div>
+    <!--侧边导航栏开始-->
+    <div class="aside">
+        <div class="left">
+            <div class="imgbox"></div>
+            <div class="text">
+                <i class="iconfont icon-iconfontshouji"></i>
+                扫一扫微信二维码
+            </div>
+        </div>
+        <div class="btn1">
+            <div class="box1"></div>
+        </div>
+        <ul class="right">
+            <li><a href="/">首页</a></li>
+            <li><a href="/aboutus">关于我们</a></li>
+            <li><a href="/business">核心业务</a></li>
+            <li><a href="/product">农场产品</a></li>
+            <li><a href="/news">新闻资讯</a></li>
+            <li><a href="/contact">联系我们</a></li>
+        </ul>
+    </div>
+    <!--侧边导航栏结束-->
+    <header></header>
+    <div class="nav">首页&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;农场产品</div>
+    <div class="us_box"></div>
+    <div class="us">
+        <h2>农场产品</h2>
+        <h3>PRODUCTS</h3>
+    </div>
+    <div class="main">
+        <ul class="left">
+             {% for item in data%}
+            <li><a href="/product1{{item[0]}}">{{item[1]}}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="right">
+            {% for item in data%}
+            <li>
+                <a href="/product1{{item[0]}}">
+                    <div class="darkbox"></div>
+                    <div class="icon"></div>
+                    <div class="imgbox"style="background:url({{item[2]}}) no-repeat center;background-size:cover"></div>
+                    <div class="text">{{item[1]}}</div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="work">版权所有 ©  农产品企业模板</div>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news</title>
+    <link rel="stylesheet" href="/static/css/news.css">
+</head>
+<body>
+<div class="logo"></div>
+<div class="btn">
+    <div class="box"></div>
+</div>
+<!--侧边导航栏开始-->
+<div class="aside">
+    <div class="left">
+        <div class="imgbox"></div>
+        <div class="text">
+            <i class="iconfont icon-iconfontshouji"></i>
+            扫一扫微信二维码
+        </div>
+    </div>
+    <div class="btn1">
+        <div class="box1"></div>
+    </div>
+    <ul class="right">
+        <li><a href="/">首页</a></li>
+        <li><a href="/aboutus">关于我们</a></li>
+        <li><a href="/business">核心业务</a></li>
+        <li><a href="/product">农场产品</a></li>
+        <li><a href="/news">新闻资讯</a></li>
+        <li><a href="/contact">联系我们</a></li>
+    </ul>
+</div>
+<!--侧边导航栏结束-->
+<header></header>
+<div class="nav">首页&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;新闻资讯</div>
+<div class="us_box"></div>
+<div class="us">
+    <h2>新闻资讯</h2>
+    <h3>NEWS</h3>
+</div>
+    <div class="main">
+        <ul class="left">
+            <li>全部资讯 (8)</li>
+            <li>公司新闻</li>
+            <li>行业动态</li>
+        </ul>
+        <div class="xxkBox" style="z-index: 10">
+            <ul class="right" style="height:auto">
+                {% for item in data %}
+            <li>
+                <a href="/news1{{item[0]}}" class="img"><div class="imgbox" style="background:url({{item[2]}}) no-repeat center;background-size:cover"></div></a>
+                <div class="text">
+                    <div class="title"><a href="/news1{{item[0]}}">{{item[1]}}</a></div>
+                    <div class="time">发布日期：{{item[5]}}</div>
+                    <div class="word" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow: hidden;">{{item[4]}}</div>
+                </div>
+            </li>
+                {% endfor %}
+        </ul>
+        </div>
+        <div class="xxkBox">
+            <ul class="right" style="height:auto">
+                 {% for item in data1 %}
+            <li>
+                <a href="/news1{{item[0]}}" class="img"><div class="imgbox" style="background:url({{item[2]}}) no-repeat center;background-size:cover"></div></a>
+                <div class="text">
+                    <div class="title"><a href="/news1{{item[0]}}">{{item[1]}}</a></div>
+                    <div class="time">发布日期：{{item[5]}}</div>
+                    <div class="word" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow: hidden;">{{item[4]}}</div>
+                </div>
+            </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+        <div class="xxkBox">
+            <ul class="right" style="height:auto">
+                   {% for item in data2 %}
+            <li>
+                <a href="/news1{{item[0]}}" class="img"><div class="imgbox" style="background:url({{item[2]}}) no-repeat center;background-size:cover"></div></a>
+                <div class="text">
+                    <div class="title"><a href="/news1{{item[0]}}">{{item[1]}}</a></div>
+                    <div class="time">发布日期：{{item[5]}}</div>
+                    <div class="word" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow: hidden;">{{item[4]}}</div>
+                </div>
+            </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="work">版权所有 ©  农产品企业模板</div>
+<!--<script src="js/index.js"></script>-->
+<script src="/static/js/news.js"></script>
+</body>
+</html>

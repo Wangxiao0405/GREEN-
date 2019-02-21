@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="/static/admin/css/pintuer.css">
+<link rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery.js"></script>
+<script src="/static/admin/js/pintuer.js"></script>
+</head>
+<style>
+  .tipss{
+      position:relative
+  }
+  .tipss input{
+      width:103px;
+      height:43px;
+      position:absolute;
+      top:0;
+      left:-103px;
+      opacity:0;
+  }
+</style>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+  <div class="body-content">
+    <!--multipart/form-data	不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。-->
+    <form action="javascripts:;" class="form-x" id="imgform" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <div class="label">
+          <label>图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
+          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <div class="tipss">图片尺寸：500*500
+              <input type="file" name="imgurl" id="image">
+          </div>
+        </div>
+      </div>
+    </form>
+    <form method="post" class="form-x" action="/addcategory" >
+      <input type="hidden" name="imgurl1">
+      <div class="form-group">
+        <div class="label">
+          <label>产品名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+          <div class="tips"></div>
+        </div>
+      </div>
+       <div class="form-group">
+          <div class="label">
+            <label>产品星级：</label>
+          </div>
+          <div class="field">
+            <select name="star" class="input w50">
+              <option value="">请选择星级</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+
+      
+      <if condition="$iscid eq 1">
+        <div class="form-group">
+          <div class="label">
+            <label>产品分类标题：</label>
+          </div>
+          <div class="field">
+            <select name="cid" class="input w50">
+              <option value="">请选择分类</option>
+              {% for item in data %}
+              <option value="{{item[0]}}">{{item[1]}}</option>
+              {% endfor %}
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+
+      </if>
+      <div class="form-group">
+        <div class="label">
+          <label>产品描述：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="con" style=" height:90px;"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+
+     
+      <div class="clear"></div>
+
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+let file=$("[type=file]")
+let url1=$("#url1")
+
+file.on("change",function(){
+  let value = file.val()
+  if(value){
+    let form = new FormData($("#imgform")[0]);
+    form.append("imgurl",$("#image").val())
+    $.ajax({
+      url:"/uploadPimg",
+      type:"post",
+      data:form,
+      processData: false,
+      contentType: false,
+      success:function(e){
+        console.log(e)
+        if(e.info =='ok'){
+          url1.attr("data-image",e.imgurl)
+          url1.attr("value",e.imgurl)
+          $("[name=imgurl1]").val(e.imgurl)
+        }
+      }
+    })
+
+  }
+})
+</script>
+</body></html>
